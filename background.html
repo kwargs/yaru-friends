@@ -19,10 +19,6 @@ var rotation = 0;
 var unreadCount = -1;
 var loadingAnimation = new LoadingAnimation();
 
-function debug(msg){
-    console.debug(msg);
-}
-
 function LoadingAnimation() {
   this.timerId_ = 0;
   this.maxCount_ = 8;  // Total number of states in animation
@@ -68,7 +64,6 @@ function isYaruUrl(url) {
 
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  //if (changeInfo.url && isYaruUrl(changeInfo.url)) {
   if (isYaruUrl(tab.url)) {
     getInboxCount(function(count) {
       updateUnreadCount(count);
@@ -230,12 +225,13 @@ function drawIconAtRotation() {
 chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.tabs.create({url: "http://my.ya.ru"});
 });
-
 </script>
 </head>
 <body onload="init()">
 <img id="logged_in" src="in.png">
 <canvas id="canvas" width="19" height="19">
 </body>
+
 </html>
 
+<!-- vim: set syntax=javascript : -->

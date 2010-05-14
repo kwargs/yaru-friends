@@ -1,13 +1,13 @@
 {
   "name": "Yaru Unreed Replies",
   "description": "http://my.ya.ru unread replies",
-  "version": "0.1",
+  "version": "0.1.1",
   "background_page": "background.html",
   "permissions": [
     "tabs", 
-    "http://my.ya.ru/",
-    "http://pass.yandex.ru/", 
-    "https://pass.yandex.ru/"
+    "http://*.ya.ru/*",
+    "http://pass.yandex.ru/*", 
+    "https://pass.yandex.ru/*"
    ],
   "browser_action": {
     "default_title": ""
