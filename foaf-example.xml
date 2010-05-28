@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:yafoaf="http://blogs.yandex.ru/schema/foaf/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <foaf:Person>
+    <foaf:nick>друнквизард</foaf:nick>
+    <foaf:name>друнквизард</foaf:name>
+    <foaf:openid>http://drunkwizard.ya.ru/</foaf:openid>
+    <foaf:img rdf:resource="http://avatars.yandex.net/get-avatar/drunkwizard/e89428a05a36d39b5cda125f333ad752.2914-middle"/>
+    <foaf:dateOfBirth>1983-04-29</foaf:dateOfBirth>
+    <foaf:gender>male</foaf:gender>
+    <foaf:page>
+      <foaf:Document rdf:about="http://drunkwizard.ya.ru/">
+        <dc:title>друнквизард</dc:title>
+      </foaf:Document>
+    </foaf:page>
+    <yafoaf:blogActivity>
+      <yafoaf:Posts>
+        <yafoaf:feed rdf:resource="http://drunkwizard.ya.ru/" dc:type="application/rss+xml"/>
+      </yafoaf:Posts>
+    </yafoaf:blogActivity>
+    <foaf:weblog rdf:resource="http://drunkwizard.ya.ru/"/>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://crexfexpex.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://hwat.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://a-ilyin.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://juniorman.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://kwargs.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://shirokoff.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://kamineff.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://juanych.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://deniszh2.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://alienator.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://ginkage.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://ya-events.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://lophornis-magnifica.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://bzhmurov.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://Brusnika-777.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://asm.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://yatst.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://s-chistovich.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://lisetare.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://aquavitale.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <rdfs:seeAlso rdf:resource="http://drunkwizard.ya.ru/foaf.xml?clubs=1"/>
+    <rdfs:seeAlso rdf:resource="http://drunkwizard.ya.ru/foaf.xml?p=1"/>
+    <foaf:interest dc:title="regimen:skylark" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=regimen%3Askylark"/>
+    <foaf:interest dc:title="marital:free" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=marital%3Afree"/>
+    <foaf:interest dc:title="birth_year:1983" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=birth_year%3A1983"/>
+    <foaf:interest dc:title="smoking:frequent" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=smoking%3Afrequent"/>
+    <foaf:interest dc:title="constitution:normal" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=constitution%3Anormal"/>
+    <foaf:interest dc:title="birthday:29/04" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=birthday%3A29%2F04"/>
+    <foaf:interest dc:title="children:yes" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=children%3Ayes"/>
+    <foaf:interest dc:title="hair:bare" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hair%3Abare"/>
+    <foaf:interest dc:title="movies:Бегущий по лезвию бритвы" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=movies%3A%D0%91%D0%B5%D0%B3%D1%83%D1%89%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BB%D0%B5%D0%B7%D0%B2%D0%B8%D1%8E%20%D0%B1%D1%80%D0%B8%D1%82%D0%B2%D1%8B"/>
+    <foaf:interest dc:title="books:Желязны" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=books%3A%D0%96%D0%B5%D0%BB%D1%8F%D0%B7%D0%BD%D1%8B"/>
+    <foaf:interest dc:title="books:Станислав Лем" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=books%3A%D0%A1%D1%82%D0%B0%D0%BD%D0%B8%D1%81%D0%BB%D0%B0%D0%B2%20%D0%9B%D0%B5%D0%BC"/>
+    <foaf:interest dc:title="music:God Is An Astronaut" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AGod%20Is%20An%20Astronaut"/>
+    <foaf:interest dc:title="movies:2x2" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=movies%3A2x2"/>
+    <foaf:interest dc:title="music:The Mayan Factor" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AThe%20Mayan%20Factor"/>
+    <foaf:interest dc:title="music:Porcupine Tree" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3APorcupine%20Tree"/>
+    <foaf:interest dc:title="movies:anime" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=movies%3Aanime"/>
+    <foaf:interest dc:title="music:The Butterfly Effect" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AThe%20Butterfly%20Effect"/>
+    <foaf:interest dc:title="hobby:читать книги" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hobby%3A%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8"/>
+    <foaf:interest dc:title="books:Кастанеда" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=books%3A%D0%9A%D0%B0%D1%81%D1%82%D0%B0%D0%BD%D0%B5%D0%B4%D0%B0"/>
+    <foaf:interest dc:title="music:坂本 龍" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3A%E5%9D%82%E6%9C%AC%20%E9%BE%8D"/>
+    <foaf:interest dc:title="music:Tool" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3ATool"/>
+    <foaf:interest dc:title="music:Maybeshewill" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AMaybeshewill"/>
+    <foaf:interest dc:title="music:Warflower" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AWarflower"/>
+    <foaf:interest dc:title="books:Ханлайн" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=books%3A%D0%A5%D0%B0%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD"/>
+    <foaf:interest dc:title="hobby:сидеть за компьютером" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hobby%3A%D1%81%D0%B8%D0%B4%D0%B5%D1%82%D1%8C%20%D0%B7%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BE%D0%BC"/>
+    <foaf:interest dc:title="music:Mansun" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AMansun"/>
+    <foaf:interest dc:title="music:65daysofstatic" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3A65daysofstatic"/>
+    <foaf:interest dc:title="music:A Perfect Circle" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3AA%20Perfect%20Circle"/>
+    <foaf:interest dc:title="hobby:кофе и сигареты" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hobby%3A%D0%BA%D0%BE%D1%84%D0%B5%20%D0%B8%20%D1%81%D0%B8%D0%B3%D0%B0%D1%80%D0%B5%D1%82%D1%8B"/>
+    <foaf:interest dc:title="languages:английский" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=languages%3A%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9"/>
+    <foaf:interest dc:title="languages:JavaScript (чуток и неправда)" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=languages%3AJavaScript%20(%D1%87%D1%83%D1%82%D0%BE%D0%BA%20%D0%B8%20%D0%BD%D0%B5%D0%BF%D1%80%D0%B0%D0%B2%D0%B4%D0%B0)"/>
+    <foaf:interest dc:title="languages:Python" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=languages%3APython"/>
+    <foaf:interest dc:title="abilities:быстро дубасить по клавишам" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=abilities%3A%D0%B1%D1%8B%D1%81%D1%82%D1%80%D0%BE%20%D0%B4%D1%83%D0%B1%D0%B0%D1%81%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B0%D0%BC"/>
+    <foaf:interest dc:title="consulting:а стоит?" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=consulting%3A%D0%B0%20%D1%81%D1%82%D0%BE%D0%B8%D1%82%3F"/>
+    <foaf:interest dc:title="consulting:математика" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=consulting%3A%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0"/>
+    <foaf:interest dc:title="abilities:жёстко тупить" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=abilities%3A%D0%B6%D1%91%D1%81%D1%82%D0%BA%D0%BE%20%D1%82%D1%83%D0%BF%D0%B8%D1%82%D1%8C"/>
+    <foaf:interest dc:title="special:Стрелочки" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=special%3A%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BE%D1%87%D0%BA%D0%B8"/>
+    <foaf:interest dc:title="special:⇒⇗⇘⇗⇘⇗⇒" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=special%3A%E2%87%92%E2%87%97%E2%87%98%E2%87%97%E2%87%98%E2%87%97%E2%87%92"/>
+    <foaf:interest dc:title="special:Last.fm" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=special%3ALast.fm"/>
+    <foaf:interest dc:title="special:drunkwizard" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=special%3Adrunkwizard"/>
+  </foaf:Person>
+</rdf:RDF>
