@@ -22,23 +22,23 @@
     </xsl:template>
 
     <xsl:template match="rdf:RDF/foaf:Person" mode="person">
-        <xsl:text>'nick':'</xsl:text>
+        <!--<xsl:text>&quot;nick&quot;:&quot;</xsl:text>
         <xsl:value-of select="foaf:nick"/>
-        <xsl:text>',</xsl:text>
-        <xsl:text>&#10;</xsl:text>
-        <xsl:text>'friends':[</xsl:text>
+        <xsl:text>&quot;,</xsl:text>
+        <xsl:text>&#10;</xsl:text>-->
+        <xsl:text>&quot;friends&quot;:[</xsl:text>
         <xsl:apply-templates select="foaf:knows/foaf:Person/rdfs:seeAlso" mode="knows"/>
         <xsl:text>],</xsl:text>
         <xsl:text>&#10;</xsl:text>
-        <xsl:text>'next':[</xsl:text>
+        <xsl:text>&quot;next&quot;:[</xsl:text>
         <xsl:apply-templates select="rdfs:seeAlso" mode="knows"/>
         <xsl:text>]</xsl:text>
     </xsl:template>
 
     <xsl:template match="rdfs:seeAlso" mode="knows">
-        <xsl:text>'</xsl:text>
-        <xsl:value-of select="@rdf:resource" disable-output-escaping="yes"/>
-        <xsl:text>'</xsl:text>
+        <xsl:text>&quot;</xsl:text>
+        <xsl:value-of select="translate(@rdf:resource, '/', '//')"/>
+        <xsl:text>&quot;</xsl:text>
         <xsl:if test="position() != last()">
             <xsl:text>,</xsl:text>
         </xsl:if>

@@ -19,107 +19,120 @@
     </yafoaf:blogActivity>
     <foaf:weblog rdf:resource="http://drunkwizard.ya.ru/"/>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://crexfexpex.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/progressive-rock/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/progressive-rock/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://hwat.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/invite/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/invite/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://a-ilyin.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/search/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/search/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://juniorman.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/indie/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/indie/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://kwargs.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/4611686018427425654/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/4611686018427425654/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://shirokoff.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/jslibs/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/jslibs/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://kamineff.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/obzor/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/obzor/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://juanych.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/undress/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/undress/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://deniszh2.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/ladiesclub/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/ladiesclub/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://alienator.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/linux/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/linux/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://ginkage.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/python/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/python/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://ya-events.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/ubuntu/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/ubuntu/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://lophornis-magnifica.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/vim/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/vim/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://bzhmurov.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/psp/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/psp/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://Brusnika-777.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/company/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/company/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://asm.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/4611686018427400837/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/4611686018427400837/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://yatst.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/shki/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/shki/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://s-chistovich.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/regexp/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/regexp/"/>
+      </foaf:Group>
     </foaf:knows>
     <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://lisetare.ya.ru/foaf.xml"/>
-      </foaf:Person>
+      <foaf:Group>
+        <rdfs:seeAlso rdf:resource="http://clubs.ya.ru/ya/foaf.xml"/>
+        <foaf:weblog rdf:resource="http://clubs.ya.ru/ya/"/>
+      </foaf:Group>
     </foaf:knows>
-    <foaf:knows>
-      <foaf:Person>
-        <rdfs:seeAlso rdf:resource="http://aquavitale.ya.ru/foaf.xml"/>
-      </foaf:Person>
-    </foaf:knows>
-    <rdfs:seeAlso rdf:resource="http://drunkwizard.ya.ru/foaf.xml?clubs=1"/>
-    <rdfs:seeAlso rdf:resource="http://drunkwizard.ya.ru/foaf.xml?p=1"/>
+    <rdfs:seeAlso rdf:resource="example/drunkwizard.xml"/>
     <foaf:interest dc:title="regimen:skylark" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=regimen%3Askylark"/>
     <foaf:interest dc:title="marital:free" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=marital%3Afree"/>
     <foaf:interest dc:title="birth_year:1983" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=birth_year%3A1983"/>

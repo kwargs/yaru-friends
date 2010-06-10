@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+div {
+    width: 400px;
+    min-width: 400px;
+}
+span {
+    color:#000000;
+    font-weight:bold;
+    font-size: small;
+}
+span b {
+    color:#FF0000 !important;
+}
+
+span a {
+    color:#000000 !important;
+    text-decoration:underline !important;
+}
+
+</style>
+<script language="javascript">
+
+var users_links = function(logins){
+    var l = null;
+    var s = '';
+    for (var i in logins) { 
+        l = logins[i];
+        s += '<span><a href="http://' + l + '.ya.ru/" target="_blank">';
+        s += '<b>' + l[0] + '</b>' + l.slice(1, l.length) + '</a></span>  ';
+        if (i>0 && !(i % 5)) 
+            s += '<br>';
+    }
+    return s;
+}
+
+chrome.tabs.getSelected(null, function(tab){
+    chrome.extension.sendRequest({ask: "get_friends", url: tab.url}, function(response){
+        var display = document.getElementById('app_list');
+
+        var current_user = response.current_user;
+        var this_user = response.this_user;
+        document.getElementById("current_user").innerHTML = users_links(current_user);
+        document.getElementById("current_user_title").innerHTML += " [" + current_user.length + "]";
+        document.getElementById("this_user").innerHTML = users_links(this_user);
+        document.getElementById("this_user_title").innerHTML = response.this_user_login + "'s [" + this_user.length + "]";
+        var intersection = current_user.filter(function(n) {
+            if(this_user.indexOf(n) == -1)
+                return false;
+            return true;
+        });
+        document.getElementById("intersection").innerHTML = users_links(intersection);
+        document.getElementById("intersection_title").innerHTML += " [" + intersection.length + "]";
+    });
+});
+</script>
+</head>
+<body>
+  <h2 id="intersection_title">Пересечение</h2>
+  <div id="intersection"></div>
+  <h2 id="this_user_title">Он/Она</h2>
+  <div id="this_user">
+  </div>
+  <h2 id="current_user_title">Вы</h2>
+  <div id="current_user">
+  </div>
+</body>
+<!-- vim: set filetype=javascript : -->
+</html>

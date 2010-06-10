@@ -1,18 +1,27 @@
 {
-  "name": "Yaru Unreed Replies",
-  "description": "http://my.ya.ru unread replies",
-  "version": "0.1.1",
+  "name": "Yaru Circle Intersection",
+  "description": "http://my.ya.ru Foaf intersection",
+  "version": "0.1",
   "background_page": "background.html",
   "permissions": [
     "tabs", 
-    "http://*.ya.ru/*",
-    "http://pass.yandex.ru/*", 
-    "https://pass.yandex.ru/*"
+    "http://*.ya.ru/*"
    ],
-  "browser_action": {
-    "default_title": ""
+  "content_scripts": [{
+    "matches": ["http://*.ya.ru/",
+                "http://*.ya.ru/index*",
+                "http://*.ya.ru/post*",
+                "http://*.ya.ru/replies*",
+                "http://*.ya.ru/profile_*",
+                "http://*.ya.ru/friends*"],
+    "js": ["inject.js"]
+  }],
+  "page_action": {
+    "default_icon": "foaf_sq_32.png",
+    "default_title": "пересечение ваших кругов!",
+    "popup": "popup.html"
   },
   "icons": {
-    "128": "yaru.png"
+    "128": "foaf_sq.png"
   }
 }

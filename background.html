@@ -1,237 +1,57 @@
 <html>
 <head>
+<script src="yafoaf.js"></script>
 <script>
 
-/* 
-based on http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/extensions/gmail/
-*/
 
-var animationFrames = 36;
-var animationSpeed = 10; // ms
-var canvas;
-var canvasContext;
-var loggedInImage;
-var pollIntervalMin = 1000 * 60;  // 1 minute
-var pollIntervalMax = 1000 * 60 * 60;  // 1 hour
-var requestFailureCount = 0;  // used for exponential backoff
-var requestTimeout = 1000 * 2;  // 5 seconds
-var rotation = 0;
-var unreadCount = -1;
-var loadingAnimation = new LoadingAnimation();
+var current_user = 'drunkwizard';//null;
 
-function LoadingAnimation() {
-  this.timerId_ = 0;
-  this.maxCount_ = 8;  // Total number of states in animation
-  this.current_ = 0;  // Current state
-  this.maxDot_ = 4;  // Max number of dots in animation
+function isYaUrl(url) {
+    return /^(http:\/\/)?[\w-]+\.ya\.ru/.test(url);
 }
 
-LoadingAnimation.prototype.paintFrame = function() {
-  var text = "";
-  for (var i = 0; i < this.maxDot_; i++) {
-    text += (i == this.current_) ? "." : " ";
-  }
-  if (this.current_ >= this.maxDot_)
-    text += "";
-
-  chrome.browserAction.setBadgeText({text:text});
-  this.current_++;
-  if (this.current_ == this.maxCount_)
-    this.current_ = 0;
-}
-
-LoadingAnimation.prototype.start = function() {
-  if (this.timerId_)
-    return;
-
-  var self = this;
-  this.timerId_ = window.setInterval(function() {
-    self.paintFrame();
-  }, 100);
-}
-
-LoadingAnimation.prototype.stop = function() {
-  if (!this.timerId_)
-    return;
-
-  window.clearInterval(this.timerId_);
-  this.timerId_ = 0;
-}
-
-function isYaruUrl(url) {
-  return url.match(/\w+\.ya\.ru/)  != null;
-}
+var special_domains = ['i', 'clubs', 'my']; 
 
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  if (isYaruUrl(tab.url)) {
-    getInboxCount(function(count) {
-      updateUnreadCount(count);
-    });
-  }
-});
-
-
-function init() {
-  canvas = document.getElementById('canvas');
-  loggedInImage = document.getElementById('logged_in');
-  canvasContext = canvas.getContext('2d');
-
-  chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
-  chrome.browserAction.setIcon({path: "in.png"});
-  loadingAnimation.start();
-
-  startRequest();
-}
-
-function scheduleRequest() {
-  var randomness = Math.random() * 2;
-  var exponent = Math.pow(2, requestFailureCount);
-  var delay = Math.min(randomness * pollIntervalMin * exponent,
-                       pollIntervalMax);
-  delay = Math.round(delay);
-
-  window.setTimeout(startRequest, delay);
-}
-
-// ajax stuff
-function startRequest() {
-  getInboxCount(
-    function(count) {
-      loadingAnimation.stop();
-      updateUnreadCount(count);
-      scheduleRequest();
-    },
-    function() {
-      loadingAnimation.stop();
-      showLoggedOut();
-      scheduleRequest();
-    }
-  );
-}
-
-function getInboxCount(onSuccess, onError) {
-  var xhr = new XMLHttpRequest();
-  var abortTimerId = window.setTimeout(function() {
-    xhr.abort();  // synchronously calls onreadystatechange
-  }, requestTimeout);
-
-  function handleSuccess(count) {
-    requestFailureCount = 0;
-    window.clearTimeout(abortTimerId);
-    if (onSuccess)
-      onSuccess(count);
-  }
-
-  function handleError() {
-    ++requestFailureCount;
-    window.clearTimeout(abortTimerId);
-    if (onError)
-      onError();
-  }
-
-  try {
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState != 4){
-        return;
+/*chrome.tabs.onCreated.addListener(function(tab) {
+    console.debug(tab.url);
+    if (isYaUrl(tab.url)) {
+        var login = url2login(tab.url);
+        console.debug('login: ' + login);
+        if (used_domains.indexOf(login) >= 0) return;
+        console.debug('is blog: ' + login);
+        //chrome.pageAction.setIcon({'path': 'http://' + login + '.ya.ru/userpic.xml?size=small', tabId: tab.id});
+        chrome.pageAction.show(tab.id);
       }
-
-      if (xhr.responseText) {
-        var resp = xhr.responseText;
-        var resp = resp.slice(resp.indexOf('h3 class="plain"'));
-        var resp = resp.slice(resp.indexOf("<a "), resp.indexOf("</a>"));
-        if (resp.length) {
-            var new_count = resp.match(/\d+/);
-            if (!new_count) {
-                new_count = '0';
-            } else {
-                new_count = new_count[0];
-            }
-            handleSuccess(new_count);
-            return;
+});*/
+chrome.extension.onRequest.addListener(
+    function(request, sender, sendResponse){
+        var response = {"ask": request.ask};
+        switch(request.ask) {
+            case "set_current_user": 
+                var tab = sender.tab;
+                current_user = request.login;
+                var login = url2login(tab.url);
+                console.debug('login: ' + login);
+                if (login != current_user && special_domains.indexOf(login) < 0) {;
+                    console.debug('is blog: ' + login);
+                    chrome.pageAction.show(tab.id);
+                }
+                break;
+            case "get_friends":
+                var this_user = url2login(request.url);
+                response.this_user_login = this_user;
+                response.this_user = ya_foaf(this_user);
+                response.current_user = ya_foaf(current_user);
+                break;
         }
-      } 
-      // no response == no auth
-
-      handleError();
-    }
-
-    xhr.onerror = function(error) {
-      handleError();
-    }
-
-    xhr.open("GET", "http://my.ya.ru/ajax/get_recent_unread_replies.xml", true);
-    xhr.send(null);
-  } catch(e) {
-    console.error(e);
-    handleError();
-  }
-}
-
-
-function updateUnreadCount(count) {
-  if (unreadCount != count) {
-    unreadCount = count;
-    animateFlip();
-  }
-}
-
-
-function ease(x) {
-  return (1-Math.sin(Math.PI/2+x*Math.PI))/2;
-}
-
-function animateFlip() {
-  rotation += 1/animationFrames;
-  drawIconAtRotation();
-
-  if (rotation <= 1) {
-    setTimeout("animateFlip()", animationSpeed);
-  } else {
-    rotation = 0;
-    drawIconAtRotation();
-    chrome.browserAction.setBadgeText({
-      text: unreadCount != "0" ? unreadCount+" " : ""
-    });
-    chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
-  }
-}
-
-function showLoggedOut() {
-  unreadCount = -1;
-  chrome.browserAction.setIcon({path: "out.png"});
-  chrome.browserAction.setBadgeBackgroundColor({color:[190, 190, 190, 230]});
-  chrome.browserAction.setBadgeText({text:"?"});
-}
-
-function drawIconAtRotation() {
-  canvasContext.save();
-  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-  canvasContext.translate(
-      Math.ceil(canvas.width/2),
-      Math.ceil(canvas.height/2));
-  canvasContext.rotate(2*Math.PI*ease(rotation));
-  canvasContext.drawImage(loggedInImage,
-      -Math.ceil(canvas.width/2),
-      -Math.ceil(canvas.height/2));
-  canvasContext.restore();
-
-  chrome.browserAction.setIcon({imageData:canvasContext.getImageData(0, 0,
-      canvas.width,canvas.height)});
-}
-
-
-// Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.tabs.create({url: "http://my.ya.ru"});
+        return sendResponse(response);
 });
+
 </script>
 </head>
-<body onload="init()">
-<img id="logged_in" src="in.png">
-<canvas id="canvas" width="19" height="19">
+<body>
 </body>
+<!-- vim: set syntax=javascript : -->
 
 </html>
-
-<!-- vim: set syntax=javascript : -->

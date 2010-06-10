@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:yafoaf="http://blogs.yandex.ru/schema/foaf/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <foaf:Person>
+    <foaf:nick>swan</foaf:nick>
+    <foaf:name>swan</foaf:name>
+    <foaf:openid>http://swan.ya.ru/</foaf:openid>
+    <foaf:img rdf:resource="http://avatars.yandex.net/get-avatar/swan/99e6d980de614f391b8ec99f185480f3.11-middle"/>
+    <foaf:dateOfBirth>1980-02-20</foaf:dateOfBirth>
+    <foaf:gender>male</foaf:gender>
+    <yafoaf:location yafoaf:country="Россия" yafoaf:region="Царицыно" yafoaf:city="Москва"/>
+    <foaf:page>
+      <foaf:Document rdf:about="http://swan.ya.ru/">
+        <dc:title>swan</dc:title>
+      </foaf:Document>
+    </foaf:page>
+    <yafoaf:blogActivity>
+      <yafoaf:Posts>
+        <yafoaf:feed rdf:resource="http://swan.ya.ru/" dc:type="application/rss+xml"/>
+      </yafoaf:Posts>
+    </yafoaf:blogActivity>
+    <foaf:weblog rdf:resource="http://swan.ya.ru/"/>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://cfirf.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://vomixamxam.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://boiler23.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://lidia-tretyakova.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://neverov.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://plushev.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://mail-blog.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://v-tvoih-rukah.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://dpolishuk.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://tejblum.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://maorri.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://fordindin.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://earlier-today.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://mih.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://lolalola-opa.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://kuzmich-petrovich.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://xolding-ancor.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://cake-and-ale.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://Murrrrster.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+      <foaf:Person>
+        <rdfs:seeAlso rdf:resource="http://trapexit.ya.ru/foaf.xml"/>
+      </foaf:Person>
+    </foaf:knows>
+    <rdfs:seeAlso rdf:resource="example/swan-p-1.xml"/>
+    <foaf:interest dc:title="regimen:skylark" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=regimen%3Askylark"/>
+    <foaf:interest dc:title="marital:married" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=marital%3Amarried"/>
+    <foaf:interest dc:title="birth_year:1980" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=birth_year%3A1980"/>
+    <foaf:interest dc:title="smoking:against" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=smoking%3Aagainst"/>
+    <foaf:interest dc:title="birthday:20/02" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=birthday%3A20%2F02"/>
+    <foaf:interest dc:title="habitat:family" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=habitat%3Afamily"/>
+    <foaf:interest dc:title="constitution:stout" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=constitution%3Astout"/>
+    <foaf:interest dc:title="hair:dark" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hair%3Adark"/>
+    <foaf:interest dc:title="country:Россия" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=country%3A%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F"/>
+    <foaf:interest dc:title="metro:Царицыно" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=metro%3A%D0%A6%D0%B0%D1%80%D0%B8%D1%86%D1%8B%D0%BD%D0%BE"/>
+    <foaf:interest dc:title="city:Москва" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=city%3A%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0"/>
+    <foaf:interest dc:title="books:man man" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=books%3Aman%20man"/>
+    <foaf:interest dc:title="hobby:ну и что то еще. Секс можно было добавить дефолтным пунктом" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hobby%3A%D0%BD%D1%83%20%D0%B8%20%D1%87%D1%82%D0%BE%20%D1%82%D0%BE%20%D0%B5%D1%89%D0%B5.%20%D0%A1%D0%B5%D0%BA%D1%81%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B4%D0%B5%D1%84%D0%BE%D0%BB%D1%82%D0%BD%D1%8B%D0%BC%20%D0%BF%D1%83%D0%BD%D0%BA%D1%82%D0%BE%D0%BC"/>
+    <foaf:interest dc:title="pets:пауки" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=pets%3A%D0%BF%D0%B0%D1%83%D0%BA%D0%B8"/>
+    <foaf:interest dc:title="movies:O2tv" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=movies%3AO2tv"/>
+    <foaf:interest dc:title="music:http://www.last.fm/user/theswan/" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3Ahttp%3A%2F%2Fwww.last.fm%2Fuser%2Ftheswan%2F"/>
+    <foaf:interest dc:title="music:Smashing Pumpkins" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3ASmashing%20Pumpkins"/>
+    <foaf:interest dc:title="hobby:сидеть за компьютером" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=hobby%3A%D1%81%D0%B8%D0%B4%D0%B5%D1%82%D1%8C%20%D0%B7%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BE%D0%BC"/>
+    <foaf:interest dc:title="pets:кАмпьютеры" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=pets%3A%D0%BA%D0%90%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D1%8B"/>
+    <foaf:interest dc:title="music:garbage" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3Agarbage"/>
+    <foaf:interest dc:title="music:bush" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3Abush"/>
+    <foaf:interest dc:title="music:чичерина" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3A%D1%87%D0%B8%D1%87%D0%B5%D1%80%D0%B8%D0%BD%D0%B0"/>
+    <foaf:interest dc:title="music:tequilajazzz" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3Atequilajazzz"/>
+    <foaf:interest dc:title="music:сплин" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3A%D1%81%D0%BF%D0%BB%D0%B8%D0%BD"/>
+    <foaf:interest dc:title="movies:A1" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=movies%3AA1"/>
+    <foaf:interest dc:title="music:маша и медведи" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3A%D0%BC%D0%B0%D1%88%D0%B0%20%D0%B8%20%D0%BC%D0%B5%D0%B4%D0%B2%D0%B5%D0%B4%D0%B8"/>
+    <foaf:interest dc:title="music:filter" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=music%3Afilter"/>
+    <foaf:interest dc:title="job:системный администратордо сих порМоскваm493885504Яндекс2005" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=job%3A%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9%20%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B4%D0%BE%20%D1%81%D0%B8%D1%85%20%D0%BF%D0%BE%D1%80%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0m493885504%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%812005"/>
+    <foaf:interest dc:title="higher_education:2000университет аэрокосмического приборосторения4-йСанкт-Петербург2003m227896651" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=higher_education%3A2000%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82%20%D0%B0%D1%8D%D1%80%D0%BE%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%B8%D0%B1%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D1%8F4-%D0%B9%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B32003m227896651"/>
+    <foaf:interest dc:title="school:Радужныйm63017247019971987средняя3" rdf:resource="http://my.ya.ru/search_users_by_interest.xml?text=school%3A%D0%A0%D0%B0%D0%B4%D1%83%D0%B6%D0%BD%D1%8B%D0%B9m63017247019971987%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F3"/>
+  </foaf:Person>
+</rdf:RDF>
