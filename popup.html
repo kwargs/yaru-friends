@@ -1,69 +1,126 @@
 <html>
 <head>
-<style>
-div {
-    width: 400px;
-    min-width: 400px;
-}
-span {
-    color:#000000;
-    font-weight:bold;
-    font-size: small;
-}
-span b {
-    color:#FF0000 !important;
-}
-
-span a {
-    color:#000000 !important;
-    text-decoration:underline !important;
-}
-
-</style>
+<link rel="stylesheet" href="popup.css">
 <script language="javascript">
 
-var users_links = function(logins){
+var hover_user = null;
+
+var users_links = function(logins, upic_size){
     var l = null;
     var s = '';
+    upic_size = upic_size || 'middle';
     for (var i in logins) { 
         l = logins[i];
-        s += '<span><a href="http://' + l + '.ya.ru/" target="_blank">';
-        s += '<b>' + l[0] + '</b>' + l.slice(1, l.length) + '</a></span>  ';
-        if (i>0 && !(i % 5)) 
-            s += '<br>';
+        s += '<div class="yauser n-'+ (1 + parseInt(i) % 3) + '">';
+        if (upic_size != null){
+            s += '<div class="u-' + upic_size + '"><img src="http://upics.yandex.net/get/' + l + '/' + upic_size + '" alt="a"></div>';
+        }
+        s += '<div class="name">';
+            s += '<a href="http://' + l + '.ya.ru/" target="_blank">' + l + '</a>';
+        s += '</div>';
+        s += '</div>';
     }
     return s;
 }
 
-chrome.tabs.getSelected(null, function(tab){
-    chrome.extension.sendRequest({ask: "get_friends", url: tab.url}, function(response){
-        var display = document.getElementById('app_list');
 
+chrome.tabs.getSelected(null, function(tab){
+    chrome.extension.sendRequest({ask: "get_friends", url: 'http://drunkwizard.ya.ru'}, function(response){
         var current_user = response.current_user;
-        var this_user = response.this_user;
         document.getElementById("current_user").innerHTML = users_links(current_user);
         document.getElementById("current_user_title").innerHTML += " [" + current_user.length + "]";
-        document.getElementById("this_user").innerHTML = users_links(this_user);
-        document.getElementById("this_user_title").innerHTML = response.this_user_login + "'s [" + this_user.length + "]";
-        var intersection = current_user.filter(function(n) {
-            if(this_user.indexOf(n) == -1)
+        if (!response.at_home) {
+            var this_user = response.this_user;
+            document.getElementById("this_user").innerHTML = users_links(this_user);
+            document.getElementById("this_user_title").innerHTML = 'Все друзья ' + response.this_user_login + " [" + this_user.length + "]";
+            var intersection = current_user.filter(function(n) {
+                if(this_user.indexOf(n) == -1)
+                    return false;
+                return true;
+            });
+            document.getElementById("intersection").innerHTML = users_links(intersection);
+            document.getElementById("intersection_title").innerHTML += " [" + intersection.length + "]";
+            var minus = this_user.filter(function(n) {
+                if(current_user.indexOf(n) == -1){
+                    return true;
+                }
                 return false;
-            return true;
-        });
-        document.getElementById("intersection").innerHTML = users_links(intersection);
-        document.getElementById("intersection_title").innerHTML += " [" + intersection.length + "]";
+            });
+            document.getElementById("minus").innerHTML = users_links(minus);
+            document.getElementById("minus_title").innerHTML = 'Есть у ' + response.this_user_login + ', но нет у вас [' + minus.length + ']';
+            toggle("guest");
+            toggle("current_user")
+        }
+        var yausers = [];//document.getElementsByClassName('yauser');
+        for (var i in yausers){
+            if (yausers[i]){
+                yausers[i].addEventListener('mouseover', function(e) {
+                    if (e.target.tagName == 'DIV' && e.target.className.indexOf('yauser') >= 0){
+                        var login = e.target.getElementsByClassName("name")[0].firstChild.innerHTML;
+                        if (login != hover_user){
+                            more_info(login, e);
+                            hover_user = login;
+                        }
+                    }
+                }, false);
+                //yausers[i].addEventListener('mouseout', function(e) {
+                //}, false);
+            } else {
+                console.debug(yausers[i]);
+            }
+
+        }
     });
 });
+
+function more_info(user, e){
+    var elem = document.getElementById("details");
+    elem.style.display = 'none';
+    console.debug(user);
+    elem.innerHTML = '<img src="http://upics.yandex.net/get/' + user + '/normal" alt="a">';
+    elem.style.display = '';
+    elem.style.left = e.pageX;
+    elem.style.top = e.pageY;
+}
+
+function toggle(elem_id){
+    var elem = document.getElementById(elem_id);
+    if (elem.style.display){
+        elem.style.display = "";
+    } else {
+        elem.style.display = "none";
+    }
+}
+
 </script>
 </head>
 <body>
-  <h2 id="intersection_title">Пересечение</h2>
-  <div id="intersection"></div>
-  <h2 id="this_user_title">Он/Она</h2>
-  <div id="this_user">
+  <div id="guest" style="display: none;">
+      <div class="container">
+          <h4 id="intersection_title">Пересечение</h4>
+          <div id="intersection"></div>
+      </div>
+
+      <div class="container">
+          <a href="#" onclick="toggle('minus')"><h4 id="minus_title">Его(Её) друзья которых нет у вас</h4></a>
+          <div id="minus" style="display:none;">
+          </div>
+      </div>
+
+      <div class="container">
+          <a href="#" onclick="toggle('this_user')"><h4 id="this_user_title">Его(Её) друзья</h4></a>
+          <div id="this_user" style="display:none;">
+          </div>
+      </div>
   </div>
-  <h2 id="current_user_title">Вы</h2>
-  <div id="current_user">
+
+  <div class="container">
+      <a href="#" onclick="toggle('current_user')"><h4 id="current_user_title">Все ваши друзья</h4></a>
+      <div id="current_user">
+      </div>
+  </div>
+  <div id="details" style="display:none;">
+    BLA BLA BLA!!!!
   </div>
 </body>
 <!-- vim: set filetype=javascript : -->

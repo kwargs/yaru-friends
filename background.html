@@ -12,6 +12,9 @@ function isYaUrl(url) {
 
 var special_domains = ['i', 'clubs', 'my']; 
 
+function isSpecialDomain(domain){
+    return special_domains.indexOf(domain) >= 0;
+}
 
 /*chrome.tabs.onCreated.addListener(function(tab) {
     console.debug(tab.url);
@@ -29,13 +32,13 @@ chrome.extension.onRequest.addListener(
         var response = {"ask": request.ask};
         switch(request.ask) {
             case "set_current_user": 
-                var tab = sender.tab;
-                current_user = request.login;
-                var login = url2login(tab.url);
-                console.debug('login: ' + login);
-                if (login != current_user && special_domains.indexOf(login) < 0) {;
-                    console.debug('is blog: ' + login);
-                    chrome.pageAction.show(tab.id);
+                if (request.login){
+                    current_user = request.login;
+                    console.debug("set current user " + current_user);
+                }
+                if (current_user){
+                    console.debug("show icon");
+                    chrome.pageAction.show(sender.tab.id);
                 }
                 break;
             case "get_friends":
@@ -43,6 +46,11 @@ chrome.extension.onRequest.addListener(
                 response.this_user_login = this_user;
                 response.this_user = ya_foaf(this_user);
                 response.current_user = ya_foaf(current_user);
+                response.at_home = 0;
+                console.debug(' this_user: ' + this_user +' current_user: ' + current_user);
+                if (current_user == this_user || isSpecialDomain(this_user) ) {
+                    response.at_home = 1;
+                }
                 break;
         }
         return sendResponse(response);

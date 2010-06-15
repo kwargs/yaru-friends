@@ -7,10 +7,10 @@ var main = function(){
     })[0];
     if (ya_login){
         ya_login = ya_login.split('=')[1];
-        chrome.extension.sendRequest(
-            { ask: "set_current_user", login: ya_login },
-            function(response){}
-        );
     }
+    chrome.extension.sendRequest(
+        { ask: "set_current_user", login: ya_login },
+        function(response){}
+    );
 }();
 

@@ -8,13 +8,9 @@
     "http://*.ya.ru/*"
    ],
   "content_scripts": [{
-    "matches": ["http://*.ya.ru/",
-                "http://*.ya.ru/index*",
-                "http://*.ya.ru/post*",
-                "http://*.ya.ru/replies*",
-                "http://*.ya.ru/profile_*",
-                "http://*.ya.ru/friends*"],
-    "js": ["inject.js"]
+    "matches": ["http://*.ya.ru/*"],
+    "js": ["inject.js"],
+    "run_at": "document_end"
   }],
   "page_action": {
     "default_icon": "foaf_sq_32.png",
