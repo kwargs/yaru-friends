@@ -3,15 +3,13 @@
 <link rel="stylesheet" href="popup.css">
 <script language="javascript">
 
-var hover_user = null;
-
 var users_links = function(logins, upic_size){
     var l = null;
     var s = '';
     upic_size = upic_size || 'middle';
     for (var i in logins) { 
         l = logins[i];
-        s += '<div class="yauser n-'+ (1 + parseInt(i) % 3) + '">';
+        s += '<div class="yauser">';
         if (upic_size != null){
             s += '<div class="u-' + upic_size + '"><img src="http://upics.yandex.net/get/' + l + '/' + upic_size + '" alt="a"></div>';
         }
@@ -24,72 +22,58 @@ var users_links = function(logins, upic_size){
 }
 
 
+var build_users = function(id, users, title){
+    document.getElementById(id).innerHTML = users_links(users);
+    document.getElementById(id + "_title").innerHTML = title;
+    var this_id = id;
+    document.getElementById(id + "_title").addEventListener('click', function(e){
+        toggle(this_id);
+        return true;
+    }, true);
+}
+
 chrome.tabs.getSelected(null, function(tab){
-    chrome.extension.sendRequest({ask: "get_friends", url: 'http://drunkwizard.ya.ru'}, function(response){
+    var current_url = tab.url;
+    if (current_url.indexOf('chrome-extension://') == 0){
+        console.debug('rewrite to swan');
+        current_url = 'http://swan.ya.ru'
+    }
+    chrome.extension.sendRequest({ask: "get_friends", url: current_url}, function(response){
         var current_user = response.current_user;
-        document.getElementById("current_user").innerHTML = users_links(current_user);
-        document.getElementById("current_user_title").innerHTML += " [" + current_user.length + "]";
+        build_users("current_user", current_user, "Ваши друзья [" +  current_user.length + "]");
         if (!response.at_home) {
             var this_user = response.this_user;
-            document.getElementById("this_user").innerHTML = users_links(this_user);
-            document.getElementById("this_user_title").innerHTML = 'Все друзья ' + response.this_user_login + " [" + this_user.length + "]";
             var intersection = current_user.filter(function(n) {
                 if(this_user.indexOf(n) == -1)
                     return false;
                 return true;
             });
-            document.getElementById("intersection").innerHTML = users_links(intersection);
-            document.getElementById("intersection_title").innerHTML += " [" + intersection.length + "]";
+            build_users("intersection", intersection, "Пересечение [" +  intersection.length + "]");
+
             var minus = this_user.filter(function(n) {
                 if(current_user.indexOf(n) == -1){
                     return true;
                 }
                 return false;
             });
-            document.getElementById("minus").innerHTML = users_links(minus);
-            document.getElementById("minus_title").innerHTML = 'Есть у ' + response.this_user_login + ', но нет у вас [' + minus.length + ']';
+            build_users("minus", minus, 'Есть у ' + response.this_user_login + ', но нет у вас [' + minus.length + ']');
             toggle("guest");
             toggle("current_user")
-        }
-        var yausers = [];//document.getElementsByClassName('yauser');
-        for (var i in yausers){
-            if (yausers[i]){
-                yausers[i].addEventListener('mouseover', function(e) {
-                    if (e.target.tagName == 'DIV' && e.target.className.indexOf('yauser') >= 0){
-                        var login = e.target.getElementsByClassName("name")[0].firstChild.innerHTML;
-                        if (login != hover_user){
-                            more_info(login, e);
-                            hover_user = login;
-                        }
-                    }
-                }, false);
-                //yausers[i].addEventListener('mouseout', function(e) {
-                //}, false);
-            } else {
-                console.debug(yausers[i]);
-            }
-
         }
     });
 });
 
-function more_info(user, e){
-    var elem = document.getElementById("details");
-    elem.style.display = 'none';
-    console.debug(user);
-    elem.innerHTML = '<img src="http://upics.yandex.net/get/' + user + '/normal" alt="a">';
-    elem.style.display = '';
-    elem.style.left = e.pageX;
-    elem.style.top = e.pageY;
-}
 
 function toggle(elem_id){
     var elem = document.getElementById(elem_id);
     if (elem.style.display){
         elem.style.display = "";
+        elem.style.visibility ="hidden";
+        elem.style.visibility ="visible";
     } else {
         elem.style.display = "none";
     }
+    return true;
 }
 
 </script>
@@ -97,30 +81,22 @@ function toggle(elem_id){
 <body>
   <div id="guest" style="display: none;">
       <div class="container">
-          <h4 id="intersection_title">Пересечение</h4>
-          <div id="intersection"></div>
+          <span id="intersection_title" class="pseudo-link">Пересечение</span>
+          <div id="intersection" class="users"></div>
       </div>
 
       <div class="container">
-          <a href="#" onclick="toggle('minus')"><h4 id="minus_title">Его(Её) друзья которых нет у вас</h4></a>
+          <span id="minus_title" class="pseudo-link">Его(Её) друзья которых нет у вас</span>
           <div id="minus" style="display:none;">
           </div>
       </div>
 
-      <div class="container">
-          <a href="#" onclick="toggle('this_user')"><h4 id="this_user_title">Его(Её) друзья</h4></a>
-          <div id="this_user" style="display:none;">
-          </div>
-      </div>
   </div>
 
   <div class="container">
-      <a href="#" onclick="toggle('current_user')"><h4 id="current_user_title">Все ваши друзья</h4></a>
+      <span id="current_user_title" class="pseudo-link">Все ваши друзья</span>
       <div id="current_user">
       </div>
-  </div>
-  <div id="details" style="display:none;">
-    BLA BLA BLA!!!!
   </div>
 </body>
 <!-- vim: set filetype=javascript : -->

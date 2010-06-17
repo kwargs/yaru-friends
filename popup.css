@@ -1,63 +1,62 @@
 body {
-    width: 470px;
+    width: 500px;
+    min-width: 500px;
 }
 
 .container {
     width: 470px;
-    border: 1px solid black;
     float: left;
+    padding: 1px;
+}
+
+.users {
+    float: left;
+}
+
+.pseudo-link {
+    cursor: pointer;
+    border-bottom: 1px dashed black;
 }
 
 .yauser {
     float: left;
-    margin: 3px;
+    margin: 10px;
     padding: 3px;
 
-    height: 50px;
+    height: 65px;
 
-    width: 140px;
+    width: 65px;
     background: white;
     border: 1px solid #ececec;
 
     -webkit-box-shadow:1px 2px 5px #666666;
     position: relative;
-    /*border: 1px solid silver;*/
-}
-
-.n-1 {
-    z-index: 100;
-}
-
-.n-2 {
-    z-index: 200;
-   /* left: -30px; */
-   /* top: 10px;*/
-}
-
-.n-3 {
-    z-index: 300;
-  /*  left: -60px; */
-   /* top: 20px;*/
-}
-
-@-webkit-keyframes fade {
-   0% {
-      opacity: 0.5;
-   }
-   100% {
-      opacity: 1.0;
-   }
+    overflow: hidden;
+    text-align: center;
+    /*border: 1px solid silver;
+    -webkit-transition-property: width; 
+    -webkit-transition-duration: 1s;
+    -webkit-transition-timing-function: linear; 
+    -webkit-transition-delay: initial; */
 }
 
 .yauser:hover {
     z-index: 1000;
+    width: 85px;
+    height: 85px;
+    /*margin-left: 0px;
+    margin-right: 0px;*/
+    margin: 0px;
+    overflow: visible;
+
+    /*-webkit-transform:scale(1.02);*/
     /*-webkit-animation-name: fade;
     -webkit-animation-duration: 1s;*/
 }
 
 .name {
     float: left;
-    width: 50px;
+    width: 100%;
 }
 
 .name a{
@@ -76,15 +75,14 @@ body {
     float: left;
     text-align: center;
     padding-right: 2px;
+    width: 100%;
 }
 
 .u-small {
-    width: 25px;
     height: 25px;
 }
 
 .u-middle {
-    width: 50px;
     height: 50px;
 }
 
