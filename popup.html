@@ -28,9 +28,9 @@ var build_users = function(id, users, title){
     var this_id = id;
     document.getElementById(id + "_title").addEventListener('click', function(e){
         toggle(this_id);
-        return true;
     }, true);
 }
+
 
 chrome.tabs.getSelected(null, function(tab){
     var current_url = tab.url;
@@ -38,6 +38,7 @@ chrome.tabs.getSelected(null, function(tab){
         console.debug('rewrite to swan');
         current_url = 'http://swan.ya.ru'
     }
+
     chrome.extension.sendRequest({ask: "get_friends", url: current_url}, function(response){
         var current_user = response.current_user;
         build_users("current_user", current_user, "Ваши друзья [" +  current_user.length + "]");
@@ -60,6 +61,7 @@ chrome.tabs.getSelected(null, function(tab){
             toggle("guest");
             toggle("current_user")
         }
+        toggle("loading");
     });
 });
 
@@ -79,6 +81,10 @@ function toggle(elem_id){
 </script>
 </head>
 <body>
+  <div id="loading">
+    <h3>Загружаем ...</h3>
+<!--    <img src="Loading_animation_by_Timon1771.gif" alt="loading..."/> -->
+  </div>
   <div id="guest" style="display: none;">
       <div class="container">
           <span id="intersection_title" class="pseudo-link">Пересечение</span>
