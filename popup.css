@@ -93,7 +93,26 @@ body {
 
 #details {
     position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: 1500;
+
+    text-align: center;
+
+    border: 2px solid silver;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-border-radius: 5px;
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1s;
-    z-index: 1500;
+}
+#details #hide {
+    cursor: pointer;
+    border-bottom: 1px dashed black;
+}
+#details .name a{
+    font-size: large;
+}
+#details .u-normal {
+    margin-top: 5px;
+    margin-left: 25px;
 }

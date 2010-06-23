@@ -3,20 +3,31 @@
 <link rel="stylesheet" href="popup.css">
 <script language="javascript">
 
+var avatar = function(l, upic_size){
+    return '<div class="u-' + upic_size + '"><img src="http://upics.yandex.net/get/' + l + '/' + upic_size + '" alt="a"></div>';
+}
+
+var title = function(l){
+    s = '<div class="name">';
+        s += '<a href="http://' + l + '.ya.ru/" target="_blank">' + l + '</a>';
+    s += '</div>';
+    return s;
+}
+
+var user_info = function (l, upic_size){
+    var s = '<div class="yauser">';
+    s += avatar(l, upic_size);
+    s += title(l);
+    s += '<span class="pseudo-link" onclick="details(\'' + l + '\')">ближе</span>';
+    s += '</div>';
+    return s;
+}
+
 var users_links = function(logins, upic_size){
-    var l = null;
     var s = '';
     upic_size = upic_size || 'middle';
-    for (var i in logins) { 
-        l = logins[i];
-        s += '<div class="yauser">';
-        if (upic_size != null){
-            s += '<div class="u-' + upic_size + '"><img src="http://upics.yandex.net/get/' + l + '/' + upic_size + '" alt="a"></div>';
-        }
-        s += '<div class="name">';
-            s += '<a href="http://' + l + '.ya.ru/" target="_blank">' + l + '</a>';
-        s += '</div>';
-        s += '</div>';
+    for (var i in logins) {
+        s += user_info(logins[i], upic_size);
     }
     return s;
 }
@@ -70,12 +81,59 @@ function toggle(elem_id){
     var elem = document.getElementById(elem_id);
     if (elem.style.display){
         elem.style.display = "";
-        elem.style.visibility ="hidden";
-        elem.style.visibility ="visible";
     } else {
         elem.style.display = "none";
     }
     return true;
+}
+
+function findPosX(obj) {
+    var curleft = 0;
+    if (obj.offsetParent) {
+        while (true) {
+            curleft+=obj.offsetLeft;
+            if (!obj.offsetParent) {
+                break;
+            }
+            obj=obj.offsetParent;
+        }
+    } else if (obj.x) {
+        curleft+=obj.x;
+    }
+    return curleft;
+}
+
+function findPosY(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        while (true) {
+            curtop+=obj.offsetTop;
+            if (!obj.offsetParent) {
+                break;
+            }
+            obj=obj.offsetParent;
+        }
+    } else if (obj.y) {
+        curtop+=obj.y;
+    }
+    return curtop;
+}
+
+function details(login){
+    var positive_pos = function(pos){
+        return pos > 0 ? pos:0;
+    }
+    var ev = window.event;
+    var res = "";
+    res += avatar(login, "normal")
+    res += title(login);
+    res += '<span class="pseudo-link" onclick="toggle(\'details\');">скрыть</span>'
+    var popup = document.getElementById("details");
+    popup.innerHTML = res;
+    popup.style.left = positive_pos(findPosX(ev.target.parentNode) - 32) + 'px';
+    popup.style.top = positive_pos(findPosY(ev.target.parentNode) - 50) + 'px';
+
+    popup.style.display = "";
 }
 
 </script>
@@ -83,7 +141,6 @@ function toggle(elem_id){
 <body>
   <div id="loading">
     <h3>Загружаем ...</h3>
-<!--    <img src="Loading_animation_by_Timon1771.gif" alt="loading..."/> -->
   </div>
   <div id="guest" style="display: none;">
       <div class="container">
@@ -103,6 +160,8 @@ function toggle(elem_id){
       <span id="current_user_title" class="pseudo-link">Все ваши друзья</span>
       <div id="current_user">
       </div>
+  </div>
+  <div id="details" style="display: none;">
   </div>
 </body>
 <!-- vim: set filetype=javascript : -->
